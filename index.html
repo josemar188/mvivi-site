@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MV-March Vivi</title>
     <style>
+    /* Estilo inicial: elementos invisíveis */
+    .scroll-effect {
+        opacity: 0; /* Começa invisível */
+        transform: translateY(50px); /* Começa mais abaixo */
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    /* Quando o elemento entra na tela, ele aparece */
+    .scroll-effect.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -33,6 +45,26 @@
         header h1 {
             font-size: 2.5em;
         }
+        
+        <!-- JavaScript para efeito de scroll -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const elements = document.querySelectorAll(".scroll-effect");
+    
+                function checkScroll() {
+                    elements.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight - 100) {
+                            el.classList.add("visible");
+                        }
+                    });
+                }
+    
+                window.addEventListener("scroll", checkScroll);
+                checkScroll(); // Verifica os elementos visíveis ao carregar a página
+            });
+        </script>
+        
         #div1 {
             widith: 100%;
             margin: 0;
@@ -66,13 +98,13 @@
         <h1 class="neon">MV</h1>
     </header>
     
-    <div id="div1">
+    <div class="scroll-effect" id="div1">
         <img src="https://i.postimg.cc/Fs6PJHBb/F8-A5-D442-2-A6-F-4398-8551-87-E3-B38153-B6.png" alt="MV 1" style="width: 100%; height: auto;">
         <img src="https://i.postimg.cc/NMQbw9Kt/CAE880-CD-CCAE-4847-93-CA-DC3-DB1-DA9-DCF.png" alt="MV 2" style="width: 100%; height: au;">
         <img src="https://i.postimg.cc/k53ffh9B/A99-AB15-A-2409-4-D98-B2-DC-B590-D3-C3-C44-F.png" alt="MV 3" style="width: 100%; height: auto;">
         
     </div>
-    <section>
+    <section class="scroll-effect">
         <h2 class="section-title">Sobre Nós</h2>
         <p>A MV - March Vivi é mais do que uma marca de carros elétricos. 
             É a fusão entre tecnologia, design e desempenho, trazendo ao mercado veículos esportivos 
@@ -89,7 +121,7 @@
         </p>
     </section>
     
-    <section>
+    <section class="scroll-effect">
         <h2 class="section-title">Tecnologia</h2>
         <p>A MV - March Vivi está na vanguarda da revolução automotiva. Nossos veículos são equipados 
             com as tecnologias mais avançadas do mercado, garantindo autonomia, desempenho e conectividade.
@@ -112,7 +144,7 @@
         </p>
     </section>
     
-    <section>
+    <section class="scroll-effect">
         <h2 class="section-title">Parcerias</h2>
         <p>A inovação acontece quando grandes mentes trabalham juntas. A MV - March Vivi busca parcerias estratégicas 
             com empresas, universidades e centros de pesquisa para acelerar o desenvolvimento e garantir que nossos veículos 
