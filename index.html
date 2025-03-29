@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MV-March Vivi</title>
+<!-- JavaScript para efeito de scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll(".scroll-effect");
+
+            function checkScroll() {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); // Verifica os elementos visíveis ao carregar a página
+        });
+    </script>
     <style>
     /* Estilo inicial: elementos invisíveis */
     .scroll-effect {
@@ -35,10 +53,10 @@
             text-aling: center;
             color: #00FFFF;
             text-shadon:
-                0 0 5px #00FFFF;
-                0 0 10px #00FFFF;
-                0 0 20px #00FFFF;
-                0 0 30px #00FFFF;
+                0 0 5px #00FFFF,
+                0 0 10px #00FFFF,
+                0 0 20px #00FFFF,
+                0 0 30px #00FFFF,
                 0 0 40px #00FFFF;
         }
         
@@ -46,27 +64,8 @@
             font-size: 2.5em;
         }
         
-        <!-- JavaScript para efeito de scroll -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const elements = document.querySelectorAll(".scroll-effect");
-    
-                function checkScroll() {
-                    elements.forEach(el => {
-                        const rect = el.getBoundingClientRect();
-                        if (rect.top < window.innerHeight - 100) {
-                            el.classList.add("visible");
-                        }
-                    });
-                }
-    
-                window.addEventListener("scroll", checkScroll);
-                checkScroll(); // Verifica os elementos visíveis ao carregar a página
-            });
-        </script>
-        
         #div1 {
-            widith: 100%;
+            width: 100%;
             margin: 0;
             padding:0;
             aling-items: flex-start;
@@ -100,7 +99,7 @@
     
     <div class="scroll-effect" id="div1">
         <img src="https://i.postimg.cc/Fs6PJHBb/F8-A5-D442-2-A6-F-4398-8551-87-E3-B38153-B6.png" alt="MV 1" style="width: 100%; height: auto;">
-        <img src="https://i.postimg.cc/NMQbw9Kt/CAE880-CD-CCAE-4847-93-CA-DC3-DB1-DA9-DCF.png" alt="MV 2" style="width: 100%; height: au;">
+        <img src="https://i.postimg.cc/NMQbw9Kt/CAE880-CD-CCAE-4847-93-CA-DC3-DB1-DA9-DCF.png" alt="MV 2" style="width: 100%; height: auto;">
         <img src="https://i.postimg.cc/k53ffh9B/A99-AB15-A-2409-4-D98-B2-DC-B590-D3-C3-C44-F.png" alt="MV 3" style="width: 100%; height: auto;">
         <img src="https://i.postimg.cc/gkLg9Zk2/B5-FB5-DBC-3-CB7-43-E2-9-D75-6-AF78-CA6-FA0-A.png" alt="MV SUV" style="width: 100%; height: auto;">
         <img src="https://i.postimg.cc/J7ZQPWTs/09-E49-B70-13-C1-4-B0-D-944-B-2-F65-DEA64-C49.png" alt="MV TRUCK" style="width: 100%; height: auto;">
