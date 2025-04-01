@@ -21,72 +21,8 @@
             window.addEventListener("scroll", checkScroll);
             checkScroll(); // Verifica os elementos visíveis ao carregar a página
         });
-        
-        
-            document.addEventListener('DOMContentLoaded', function() {
-                const abrirBarraBotao = document.querySelector('.abrir-barra');
-                const fecharBarraBotao = document.querySelector('.fechar-barra');
-                const body = document.body; // Ou outro elemento pai se preferir
-            
-                abrirBarraBotao.addEventListener('click', function() {
-                    body.classList.add('barra-aberta');
-                });
-            
-                fecharBarraBotao.addEventListener('click', function() {
-                    body.classList.remove('barra-aberta');
-                });
-            });
-
-        
     </script>
     <style>
-        .nav-container {
-          position: relative; /* Necessário para posicionar o menu corretamente */
-        }
-        
-        .nav-toggle {
-          background: none;
-          border: none;
-          font-size: 1.5em;
-          cursor: pointer;
-          padding: 10px;
-        }
-        
-        .nav {
-          width: 150px; /* Defina a largura desejada */
-          background-color: #f0f0f0;
-          position: absolute;
-          top: 100%; /* Posiciona abaixo do botão */
-          left: 0;
-          z-index: 10; /* Garante que fique acima de outros elementos */
-          display: none; /* Inicialmente escondido */
-        }
-        
-        .nav.open {
-          display: block; /* Mostra o menu quando a classe 'open' é adicionada */
-        }
-        
-        .nav ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-        
-        .nav li a {
-          display: block;
-          padding: 10px;
-          text-decoration: none;
-          color: #333;
-        }
-        
-        .nav li a:hover {
-          background-color: #ddd;
-        }
-
-
-
-    
-    
     /* Estilo inicial: elementos invisíveis */
     .scroll-effect {
         opacity: 0; /* Começa invisível */
@@ -161,17 +97,6 @@
 <body>
     <header>
         <h1 class="neon">MARCH VIVI</h1>
-        <button class="abrir-barra" aria-label="Abrir menu">☰</button>
-        <aside class="barra-lateral">
-            <button class="fechar-barra" aria-label="Frechar menu">&times;</button>
-                <nav>
-                    <ul>
-                        <li><a href="#tec">Tecnologia</a></li>
-                         <li><a href="#parc">Parcerias</a></li>
-                         <li><a href="#cont">Contactos</a></li>
-                    </ul>
-                </nav>
-        </aside>
     </header>  
     <div  id="div1">
         <img class="scroll-effect" src="https://i.postimg.cc/SK3DMT2z/346-ED037-1593-4-DA8-8-A74-87418-DA8-CBDC.png" alt="MV 1" style="width: 100%; height: auto;">
