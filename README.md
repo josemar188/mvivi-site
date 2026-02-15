@@ -15,7 +15,7 @@ Uma landing page futurista e minimalista para a **MV - March Vivi**, uma marca c
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas no Site
 
 O projeto foi construído utilizando tecnologias web fundamentais (Vanilla Stack), garantindo performance e leveza:
 
@@ -25,4 +25,4 @@ O projeto foi construído utilizando tecnologias web fundamentais (Vanilla Stack
 
 ---
 
-<a href="https://josemar188.github.io/mvivi-site/" alt="site-mv">Site MV</a>
+<a href="https://josemar188.github.io/mvivi-site/" alt="site-mv">Site do MV-Mach Vivi</a>
