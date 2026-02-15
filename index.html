@@ -3,180 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MV-March Vivi</title>
-<!-- JavaScript para efeito de scroll -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const elements = document.querySelectorAll(".scroll-effect");
-
-            function checkScroll() {
-                elements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 100) {
-                        el.classList.add("visible");
-                    }
-                });
-            }
-
-            window.addEventListener("scroll", checkScroll);
-            checkScroll(); // Verifica os elementos visíveis ao carregar a página
-        });
-    </script>
+    <title>MV - March Vivi | Electric Future</title>
+    
     <style>
-    /* Estilo inicial: elementos invisíveis */
-    .scroll-effect {
-        opacity: 0; /* Começa invisível */
-        transform: translateY(50px); /* Começa mais abaixo */
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    /* Quando o elemento entra na tela, ele aparece */
-    .scroll-effect.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        /* Variáveis para facilitar a troca de cores */
+        :root {
+            --neon-color: #00FFFF;
+            --bg-dark: #000000;
+            --accent-blue: #0433FF;
+            --text-gray: #AAABAF;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-color:AAABAF;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background-color: var(--bg-dark);
             color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        /* Efeito de Scroll Suave */
+        .scroll-effect {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-effect.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         header {
-            text-align: center;
-            #padding: 0px 0;
-            background: #000000;
-        }
-        .neon{
-            font-size: 3em;
-            text-align: center;
-            color: #00FFFF;
-            text-shadon:
-                0 0 5px #00FFFF,
-                0 0 10px #00FFFF,
-                0 0 20px #00FFFF,
-                0 0 30px #00FFFF,
-                0 0 40px #00FFFF,
-                 0 0 50px #00FFFF,  /* Camada 6: brilho ainda mais intenso */
-                 0 0 75px #00FFFF;
-        }
-        header h1 {
-            font-size: 2.5em;
-        }
-        h2 {
+            padding: 60px 20px;
+            background: var(--bg-dark);
             text-align: center;
         }
-        #div1 {
-            width: 100%;
+
+        .neon {
+            font-size: clamp(2rem, 8vw, 4rem); /* Tamanho de fonte responsivo */
+            color: var(--neon-color);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow:
+                0 0 10px var(--neon-color),
+                0 0 20px var(--neon-color),
+                0 0 40px var(--neon-color);
             margin: 0;
-            padding:0;
-            aling-items: flex-start;
-            justify-content: flex-start;
         }
-        #div1 img{
-            margin:0;
-            width: 33.33%;
-            padding: 0;
-            height:auto;
-            display: block;
+
+        /* Galeria em Grid Responsivo */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 15px;
         }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover; /* Mantém a proporção sem achatar a imagem */
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+            filter: grayscale(30%);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            filter: grayscale(0%);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
         section {
-            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
         }
+
         .section-title {
-            font-size: 1.8em;
-            color: #00bcd4;
+            font-size: 2rem;
+            color: var(--neon-color);
+            border-left: 4px solid var(--neon-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
         }
+
+        .electric-banner {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(transparent, #0433ff22, transparent);
+        }
+
+        .electric-banner h3 {
+            font-family: 'Impact', sans-serif;
+            margin: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-link {
+            color: #5A93F0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--neon-color);
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            background: #333;
+            padding: 40px;
+            background: #111;
+            border-top: 1px solid #333;
+            color: var(--text-gray);
+            font-size: 0.9em;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1 class="neon">MARCH VIVI</h1>
     </header>  
-    <div  id="div1">
-        <img class="scroll-effect" src="https://i.postimg.cc/SK3DMT2z/346-ED037-1593-4-DA8-8-A74-87418-DA8-CBDC.png" alt="MV 1" style="width: 100%; height: auto;">
-        <img class="scroll-effect" src="https://i.postimg.cc/y8jJ1KJH/43-B4350-C-B8-D3-4-BE4-B132-646-CC75-D6-EB7.png" alt="MV SPORT 2" style="width: 100%; height: auto;">
-        <img class="scroll-effect" src="https://i.postimg.cc/yxWcjsvQ/20-A500-CD-6-D6-A-4014-945-F-ABD0-E888-D2-A0.png" alt="MV SEDAN" style="width: 100%; height: auto;">
-        <img class="scroll-effect" src="https://i.postimg.cc/G3Dj3PD5/B10-F7-FEE-2-CA5-4-F55-9677-043-F04719704.png" alt="MV SUV" style="width: 100%; height: auto;">
-        <img class="scroll-effect" src="https://i.postimg.cc/DwZjzk5v/9-DE72433-5-AC5-44-B4-8-E8-B-64678-AD83-EE9.png" alt="MV TRUCK" style="width: 100%; height: auto;">
-        <img class="scroll-effect" src="https://i.postimg.cc/qMXXykjc/95-C8-CF47-273-F-4632-8-CBB-233-DED1-AF8-EB.png" alt="MV SPORT 1" style="width: 100%; height: auto;">
-    </div>
-    <section class="scroll-effect">
-        <h3 style="text-align:center; font-family:impact; color:#0433FF">Aqui é tudo Elétrico</h3>
-        <h3 style="text-align:center; font-family:impact; color:#2669C2">Aqui é tudo Elétrico</h3>
-        <h3 style="text-align:center; font-family:impact; color:#3A98C5">Aqui é tudo Elétrico</h3>
 
-    </section>
+    <div class="gallery-grid">
+        <img class="scroll-effect" src="https://i.postimg.cc/SK3DMT2z/346-ED037-1593-4-DA8-8-A74-87418-DA8-CBDC.png" alt="MV 1">
+        <img class="scroll-effect" src="https://i.postimg.cc/y8jJ1KJH/43-B4350-C-B8-D3-4-BE4-B132-646-CC75-D6-EB7.png" alt="MV SPORT 2">
+        <img class="scroll-effect" src="https://i.postimg.cc/yxWcjsvQ/20-A500-CD-6-D6-A-4014-945-F-ABD0-E888-D2-A0.png" alt="MV SEDAN">
+        <img class="scroll-effect" src="https://i.postimg.cc/G3Dj3PD5/B10-F7-FEE-2-CA5-4-F55-9677-043-F04719704.png" alt="MV SUV">
+        <img class="scroll-effect" src="https://i.postimg.cc/DwZjzk5v/9-DE72433-5-AC5-44-B4-8-E8-B-64678-AD83-EE9.png" alt="MV TRUCK">
+        <img class="scroll-effect" src="https://i.postimg.cc/qMXXykjc/95-C8-CF47-273-F-4632-8-CBB-233-DED1-AF8-EB.png" alt="MV SPORT 1">
+    </div>
+
+    <div class="electric-banner scroll-effect">
+        <h3 style="color:#0433FF">Aqui é tudo Elétrico</h3>
+        <h3 style="color:#2669C2">Aqui é tudo Elétrico</h3>
+        <h3 style="color:#3A98C5">Aqui é tudo Elétrico</h3>
+    </div>
+
     <section class="scroll-effect">
         <h2 class="section-title">Sobre Nós</h2>
-        <p>A MV - March Vivi é mais do que uma marca de carros elétricos. 
-            É a fusão entre tecnologia, design e desempenho, trazendo ao mercado veículos esportivos 
-            e luxuosos que redefinem a mobilidade do futuro. Nosso compromisso é criar automóveis que 
-            oferecem potência extrema, sofisticação e inovação, sem abrir mão da sustentabilidade.
-        </p>
-        <p>Nosso conceito se baseia na simplicidade e elegância, traduzidos em um design futurista 
-            e minimalista. Cada veículo da MV é pensado para entregar uma experiência única ao condutor, 
-            combinando alta performance com eficiência energética.
-        </p>
-        <p>Acreditamos que o futuro da mobilidade é elétrico, sustentável e inteligente. Nosso objetivo 
-            é liderar essa transformação, trazendo soluções inovadoras que unem velocidade, conforto 
-            e tecnologia de ponta.
-        </p>
+        <p>A MV - March Vivi é a fusão entre tecnologia, design e desempenho. Redefinimos a mobilidade do futuro com veículos que entregam potência extrema e sofisticação sustentável.</p>
     </section>
+
     <section class="scroll-effect">
-        <h2 class="section-title" id="tec">Tecnologia</h2>
-        <p>A MV - March Vivi está na vanguarda da revolução automotiva. Nossos veículos são equipados 
-            com as tecnologias mais avançadas do mercado, garantindo autonomia, desempenho e conectividade.
-        </p>
-        <p>Baterias de Alta Performance
-            Desenvolvemos sistemas de bateria de longa duração e carregamento ultrarrápido, permitindo que os motoristas 
-            percorram grandes distâncias sem comprometer a eficiência.
-        </p>
-        <p>Motores Elétricos Potentes Cada modelo da MV é projetado para entregar velocidade e aceleração impressionantes, 
-            garantindo uma experiência de condução esportiva incomparável.
-        </p>
-        <p>Aerodinâmica Inteligente Nossos carros são projetados com linhas aerodinâmicas otimizadas para reduzir o arrasto 
-            e aumentar a eficiência energética.
-        </p>
-        <p>Conectividade Total A integração de inteligência artificial e sistemas avançados de infotainment garante que 
-            o motorista tenha controle absoluto do veículo com comandos intuitivos e personalizáveis.
-        </p>
-        <p>Segurança de Última Geração Implementamos as tecnologias mais recentes em sensores, câmeras e assistentes 
-            de condução autônoma, oferecendo máxima segurançae conforto ao condutor.
-        </p>
+        <h2 class="section-title">Tecnologia</h2>
+        <p><strong>Baterias:</strong> Longa duração e carregamento ultrarrápido.</p>
+        <p><strong>Performance:</strong> Motores elétricos projetados para aceleração instantânea.</p>
+        <p><strong>IA:</strong> Conectividade total com sistemas de direção inteligente.</p>
     </section>
+
     <section class="scroll-effect">
-        <h2 class="section-title" id="parc">Parcerias</h2>
-        <p>A inovação acontece quando grandes mentes trabalham juntas. A MV - March Vivi busca parcerias estratégicas 
-            com empresas, universidades e centros de pesquisa para acelerar o desenvolvimento e garantir que nossos veículos 
-            estejam sempre na fronteira da tecnologia.
-        </p>
-        <p>Estamos em contato com instituições universitárias da engenharia, além de empresas do setor automotivo, 
-            para colaborar no desenvolvimento de baterias mais eficientes, motores elétricos mais potentes e softwares 
-            inteligentes de condução.
-        </p>
-        <p>Além disso, buscamos parceiros para produção e montagem, garantindo que nossos veículos sejam fabricados com 
-            os mais altos padrões de qualidade. Se você compartilha nossa visão de um futuro elétrico e inovador, entre em 
-            contato e faça parte dessa revolução.
-        </p>
-        <p>A MV não é apenas uma marca de carros. É a materialização do futuro da mobilidade, onde desempenho, 
-            luxo e sustentabilidade se encontram.
-        </p>
-    </section>
-    <section class="scroll-effect">
-        <h2 class="section-title" id="cont">Contactos</h2>
-        <p style="color:5A93F0; text-decoration:underline;">tel: +351 961664286</p>
-        <p>email: jusng188@gmail.com</p>
-        <br><br>
+        <h2 class="section-title">Contactos</h2>
+        <p>📞 <a href="tel:+351961664286" class="contact-link">+351 961 664 286</a></p>
+        <p>✉️ <a href="mailto:jusng188@gmail.com" class="contact-link">jusng188@gmail.com</a></p>
+        <p>📸 <a href="https://www.instagram.com/ju_sng1?igsh=dGpvOG4xaGgyazlt&utm_source=qr" class="contact-link">Instagram: @ju_sng1</a></p>
     </section>
     
     <footer>
-        <p>© 2025 MV - March Vivi</p>
+        <p>© 2025 MV - March Vivi | Inovação em Movimento</p>
     </footer>
+
+    <script>
+        // JS Moderno: Intersection Observer (Mais rápido e eficiente)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-effect').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
