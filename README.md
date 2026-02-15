@@ -4,6 +4,8 @@ Uma landing page futurista e minimalista para a **MV - March Vivi**, uma marca c
 
 ---
 
+<img src="https://i.postimg.cc/SK3DMT2z/346-ED037-1593-4-DA8-8-A74-87418-DA8-CBDC.png" alt="MV 1">
+
 ## 🚀 Funcionalidades
 
 * **Efeito Scroll Reveal:** Utiliza JavaScript puro para detectar o movimento do usuário e aplicar animações de entrada (`fade-in` e `slide-up`) nos elementos.
