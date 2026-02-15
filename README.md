@@ -1,1 +1,41 @@
-# mvivi-site
+# MV - March Vivi 🏎️⚡
+
+Uma landing page futurista e minimalista para a **MV - March Vivi**, uma marca conceitual de veículos elétricos de luxo e alta performance. Este projeto destaca a intersecção entre tecnologia avançada, sustentabilidade e design moderno.
+
+---
+
+## 🚀 Funcionalidades
+
+* **Efeito Scroll Reveal:** Utiliza JavaScript puro para detectar o movimento do usuário e aplicar animações de entrada (`fade-in` e `slide-up`) nos elementos.
+* **Identidade Visual Neon:** Estilização CSS avançada com efeitos de brilho ciano e tipografia Impact para uma estética industrial/automotiva.
+* **Design Responsivo:** O layout adapta o tamanho das imagens e textos automaticamente para diferentes dispositivos.
+* **Seções Informativas:** Áreas dedicadas à tecnologia de baterias, parcerias acadêmicas e visão da marca.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+O projeto foi construído utilizando tecnologias web fundamentais (Vanilla Stack), garantindo performance e leveza:
+
+- **HTML5**: Estrutura semântica do site.
+- **CSS3**: Estilização com Flexbox, seletores de classe dinâmicos e efeitos de brilho (*text-shadow*).
+- **JavaScript**: Lógica para manipulação do DOM e ativação de gatilhos de rolagem.
+
+---
+
+## 🎨 Estrutura de Código
+
+### Efeito de Animação (CSS)
+Os elementos começam com `opacity: 0` e uma transposição no eixo Y. Ao entrar no campo de visão, a classe `.visible` é adicionada via JS:
+
+```css
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
